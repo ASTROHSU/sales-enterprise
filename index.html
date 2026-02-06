@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>區塊勢 | 金融業企業訂閱方案</title>
+    <title>區塊勢 | 企業訂閱方案</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -29,15 +29,22 @@
     <script type="text/babel">
         const { useState, useEffect, useCallback } = React;
 
-        // --- Icons (SVG Components) ---
+        // --- Icons (SVG Components based on Lucide) ---
         const IconArrowRight = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>;
         const IconArrowLeft = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>;
         
-        const IconFilter = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>;
-        const IconClock = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>;
-        const IconBuilding = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M16 18h.01"/></svg>;
-        const IconScale = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>;
+        const IconShield = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>;
+        const IconTarget = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>;
+        const IconUsers = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
+        const IconClock = ({size=32, color="#48AAE0"}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>;
+        const IconZap = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>;
+        const IconMouse = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1"/><path d="m5.1 8-2.9-.8"/><path d="M15 4.1 12.5 6"/><path d="m19.9 11-2.4-2.5"/></svg>;
+        const IconTrending = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>;
         const IconCheck = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>;
+        const IconMapPin = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
+        const IconCalendar = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>;
+        const IconExternalLink = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>;
+        const IconBook = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>;
 
         // --- Branding Colors ---
         const CI = {
@@ -47,131 +54,203 @@
             bg: '#F8FAFC'
         };
 
-        // --- Content ---
+        // --- Content from SlideDeck ---
         const slides = [
             {
-                id: 'cover',
+                id: 'intro',
                 layout: 'cover',
-                tag: "金融業 Web3 外部智庫",
-                title: "用最少的時間，做最精準的決策",
-                subtitle: "區塊勢企業訂閱方案",
-                desc: "我們不提供海量資訊，我們提供的是「判斷」。",
-                footer: "Proposal for Financial Institutions"
+                tag: "企業訂閱方案",
+                title: "用最少的時間，掌握區塊鏈產業最核心的趨勢",
+                subtitle: "區塊勢 Blocktrend",
+                desc: "我們不做資訊轟炸，我們做的是「雜訊過濾」。",
+                footer: "許明恩 | 區塊勢創辦人"
             },
             {
-                id: 'pain',
+                id: 'pain-point',
                 layout: 'split',
-                title: "資訊焦慮的根源",
-                subtitle: "The Paradox of Information",
+                title: "企業面對加密貨幣的焦慮",
+                subtitle: "Information Anxiety",
                 leftContent: (
-                    <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                            <h3 className="text-xl font-bold text-slate-800 mb-2">不是資訊太少，而是雜訊太多</h3>
-                            <p className="text-lg text-slate-600 leading-relaxed">
-                                金融從業人員的時間極其寶貴。網路上充滿了價格炒作、空投行銷與未經查證的謠言。
-                            </p>
+                    <div className="space-y-4">
+                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div className="mt-1"><IconTarget /></div>
+                            <p className="text-lg text-slate-700">業務開始需要接觸 Web3，但不知從何入手？</p>
                         </div>
-                        <p className="text-xl text-slate-700 font-medium leading-relaxed pl-2 border-l-4" style={{borderColor: CI.orange}}>
-                            如果您每週只有 10 分鐘關心 Web3 產業，您會選擇閱讀什麼？
-                        </p>
+                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div className="mt-1"><IconUsers /></div>
+                            <p className="text-lg text-slate-700">資訊太多且不即時，缺乏專業判斷，難以掌握重點。</p>
+                        </div>
+                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                            <div className="mt-1"><IconClock /></div>
+                            <p className="text-lg text-slate-700">資訊量爆炸，決策者沒有時間整天過濾雜訊。</p>
+                        </div>
                     </div>
                 ),
                 rightContent: (
                     <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                        <IconFilter />
-                        <h3 className="text-2xl font-bold mt-6 mb-2 text-slate-800">我們做的是「減法」</h3>
-                        <p className="text-lg text-slate-500 max-w-sm">
-                            區塊勢的存在，是為了幫您過濾掉 99% 不重要的雜訊，只留下那 1% 會影響市場格局的訊號。
+                        <h3 className="text-2xl font-bold mb-4 text-slate-800">Less is More</h3>
+                        <p className="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
+                            重點從來不是「沒資訊看」，而是<br/><span className="text-blue-500 font-bold">「哪些資訊才是重要的」</span>？
                         </p>
+                        <div className="p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                            <IconClock size={60} color={CI.orange} />
+                            <p className="mt-4 text-slate-500">如果你每週只有 10 分鐘...</p>
+                        </div>
                     </div>
                 )
             },
             {
-                id: 'authority',
+                id: 'structure',
                 layout: 'detail',
-                tag: "Market Standard",
-                title: "同步市場的資訊基準",
+                tag: "Product Structure",
+                title: "全方位的資訊服務體系",
                 content: (
-                    <div className="flex flex-col h-full justify-center space-y-8">
-                        <p className="text-2xl text-slate-700 font-medium leading-relaxed">
-                            這不是一份充滿技術術語的報告，而是一套連監理機關都在使用的「共同語言」。
-                        </p>
+                    <div className="flex flex-col h-full justify-center items-center space-y-6">
+                        <p className="text-xl text-slate-600 mb-4">為企業量身打造的學習路徑</p>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition-colors">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="p-3 bg-white rounded-xl shadow-sm">
-                                        <IconScale />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-slate-800">主管機關也在看</h4>
-                                        <p className="text-sm text-slate-500">金管會證期局、櫃買中心</p>
-                                    </div>
-                                </div>
-                                <p className="text-slate-600 leading-relaxed">
-                                    當監理單位在制定虛擬資產規範時，他們參考的資訊來源與您是否一致？訂閱區塊勢，等於與主管機關同步資訊視角。
-                                </p>
+                        {/* Level 3 */}
+                        <div className="w-full max-w-3xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-slate-700 hover:translate-x-2 transition-transform">
+                            <div className="p-3 bg-slate-100 rounded-full"><IconTrending /></div>
+                            <div>
+                                <h3 className="text-xl font-bold text-slate-800">3. 區塊勢內容 (深度)</h3>
+                                <p className="text-slate-600">第一手經驗、趨勢分析、每週 Podcast</p>
                             </div>
+                        </div>
 
-                            <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition-colors">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="p-3 bg-white rounded-xl shadow-sm">
-                                        <IconBuilding />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-slate-800">金融同業的選擇</h4>
-                                        <p className="text-sm text-slate-500">國泰金控、中國信託</p>
-                                    </div>
-                                </div>
-                                <p className="text-slate-600 leading-relaxed">
-                                    從 RWA 到穩定幣支付，領先的金融機構已將區塊勢作為內部培訓與策略制定的外部智庫。
-                                </p>
+                        {/* Level 2 */}
+                        <div className="w-full max-w-4xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-orange-500 hover:translate-x-2 transition-transform">
+                            <div className="p-3 bg-orange-50 rounded-full"><IconZap /></div>
+                            <div>
+                                <h3 className="text-xl font-bold text-slate-800">2. 精選週報 (時事)</h3>
+                                <p className="text-slate-600">每週五則大事、圖表化、社群風向、高層必讀</p>
+                            </div>
+                        </div>
+
+                        {/* Level 1 */}
+                        <div className="w-full max-w-5xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-blue-400 hover:translate-x-2 transition-transform">
+                            <div className="p-3 bg-blue-50 rounded-full"><IconBook /></div>
+                            <div>
+                                <h3 className="text-xl font-bold text-slate-800">1. 企業 Web3 必修課 (入門)</h3>
+                                <p className="text-slate-600">實體工作坊、實際上手操作、建立產業框架</p>
                             </div>
                         </div>
                     </div>
                 )
             },
             {
-                id: 'solution',
+                id: 'solution-weekly',
                 layout: 'split',
-                title: "為專業人士打造",
-                subtitle: "Professional Curation",
+                title: "精選週報：資訊過濾器",
+                subtitle: "Weekly Briefing",
                 leftContent: (
                     <div className="space-y-6 flex flex-col justify-center h-full">
-                        <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold opacity-20 mt-[-5px]">01</span>
+                         <div className="flex items-start gap-4">
+                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">01</span>
                             <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">精選週報 (Executive Brief)</h3>
-                                <p className="text-slate-600">每週二發刊。專為決策者設計，5 則重點新聞 + 深度圖表分析。只需 10 分鐘，掌握本週市場脈動。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">取代不專業的蒐集</h3>
+                                <p className="text-slate-600">別把決策建立在二手資訊上。由 9 年經驗專家親自篩選。</p>
                             </div>
                         </div>
                         <div className="w-full h-px bg-slate-200"></div>
                         <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold opacity-20 mt-[-5px]">02</span>
+                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">02</span>
                             <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">深度內容 (Deep Dive)</h3>
-                                <p className="text-slate-600">每週一、三、四。針對單一議題（如：穩定幣法規、DeFi 協議機制）進行拆解。適合 PM 與法遵深入研究。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">極致精簡</h3>
+                                <p className="text-slate-600">每週僅產出一篇，內容不超過 5 則。一則新聞，三個層次（摘要、圖表、風向）。</p>
                             </div>
                         </div>
                         <div className="w-full h-px bg-slate-200"></div>
                         <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold opacity-20 mt-[-5px]">03</span>
+                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">03</span>
                             <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">歷史資料庫</h3>
-                                <p className="text-slate-600">自 2017 年累積至今的產業資料庫，隨時可供團隊查詢歷史脈絡，避免重蹈覆轍。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">一眼看懂</h3>
+                                <p className="text-slate-600">大量運用圖表與視覺化呈現數據。</p>
                             </div>
                         </div>
                     </div>
                 ),
                 rightContent: (
                     <div className="h-full w-full bg-slate-100 rounded-2xl overflow-hidden relative border border-slate-200 group">
-                        <img 
+                         <img 
                             src="https://duk.tw/CSJCIu.png" 
                             alt="Report Preview" 
                             className="absolute top-0 left-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/80 to-transparent p-6 pt-20">
-                            <p className="text-white font-bold text-lg">實際呈現：精簡、圖表化、可讀性高</p>
+                            <p className="text-white font-bold text-lg">實際呈現：專為決策者設計的介面</p>
+                        </div>
+                    </div>
+                )
+            },
+            {
+                id: 'why-me',
+                layout: 'detail',
+                tag: "Expertise",
+                title: "為什麼是許明恩？",
+                content: (
+                    <div className="flex flex-col h-full justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
+                                <div className="text-4xl font-bold text-blue-500 mb-4 font-mono">9+</div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">年產業經驗</h3>
+                                <p className="text-slate-600 leading-relaxed">從 2017 年至今，經歷多輪牛熊轉換，不隨市場起舞。</p>
+                            </div>
+                             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
+                                <div className="text-4xl font-bold text-orange-500 mb-4 font-mono">Human</div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">人腦勝過 AI</h3>
+                                <p className="text-slate-600 leading-relaxed">AI 能蒐集海量資訊，但無法判斷「當下的重要性」與「在地觀點」。</p>
+                            </div>
+                             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
+                                <div className="text-4xl font-bold text-slate-700 mb-4 font-mono">1st</div>
+                                <h3 className="text-xl font-bold text-slate-800 mb-3">第一手來源</h3>
+                                <p className="text-slate-600 leading-relaxed">拒絕中文媒體的二手編譯，直接解讀原文與鏈上數據。</p>
+                            </div>
+                        </div>
+                         <div className="mt-8 text-center">
+                             <p className="text-xl text-slate-500 italic">"您可以選擇其他任何人，或是選擇最專業的區塊勢。"</p>
+                         </div>
+                    </div>
+                )
+            },
+            {
+                id: 'workshop',
+                layout: 'detail',
+                tag: "Entry Level",
+                title: "企業 Web3 必修課",
+                content: (
+                    <div className="flex flex-col md:flex-row h-full gap-8 items-center">
+                        <div className="flex-1 space-y-6">
+                            <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium">
+                                這是一場「實際上手」的工作坊。專為那些「還沒機會認真瞭解」的從業人員設計。
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3">
+                                    <div className="mt-1 text-blue-500"><IconCheck /></div>
+                                    <span className="text-lg text-slate-700">實作導向：不只聽觀念，更實際操作錢包與應用。</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="mt-1 text-blue-500"><IconCheck /></div>
+                                    <span className="text-lg text-slate-700">掌握全局：一天內建立完整產業框架，不再盲人摸象。</span>
+                                </li>
+                            </ul>
+                            <div className="flex flex-wrap gap-4 mt-4">
+                                <div className="flex items-center gap-2 bg-orange-50 text-orange-700 px-4 py-2 rounded-lg border border-orange-200">
+                                    <IconCalendar /> <span>3月6日 (週五) 09:00 - 17:00</span>
+                                </div>
+                                <div className="flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg border border-slate-200">
+                                    <IconMapPin /> <span>台大集思會議中心</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex-1 w-full max-w-sm">
+                            <div className="bg-white p-8 rounded-2xl shadow-lg border-2 border-slate-100 text-center">
+                                <div className="mb-6 flex justify-center"><IconMouse /></div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-2">立即報名</h3>
+                                <p className="text-slate-500 mb-6">名額有限，額滿為止</p>
+                                <a href="https://workshop.blocktrend.today/" target="_blank" className="flex items-center justify-center gap-2 w-full py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition-colors shadow-md">
+                                    <IconExternalLink /> 前往報名頁面
+                                </a>
+                            </div>
                         </div>
                     </div>
                 )
@@ -180,17 +259,17 @@
                 id: 'pricing',
                 layout: 'detail',
                 tag: "Proposal",
-                title: "企業訂閱方案",
+                title: "訂閱方案比較",
                 content: (
                     <div className="flex flex-col h-full justify-center space-y-6">
                         <p className="text-xl text-slate-600 text-center max-w-3xl mx-auto mb-4">
-                            您可以選擇讓團隊各自花時間在網路上過濾雜訊，或者，直接訂閱一份已經被市場與監管機構驗證過的情報服務。
+                            選擇最適合您的專業資訊服務
                         </p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full">
                             {/* Standard Plan */}
                             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col relative overflow-hidden">
-                                <h3 className="text-2xl font-bold text-slate-800 mb-2">企業標準方案</h3>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-2">企業標準訂閱</h3>
                                 <div className="flex items-baseline gap-2 mb-6">
                                     <span className="text-4xl font-bold text-slate-900">USD 5,000</span>
                                     <span className="text-slate-500">/ 年</span>
@@ -202,11 +281,11 @@
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 text-blue-500"><IconCheck /></div>
-                                        <span className="text-slate-700">包含 1 位實體工作坊名額</span>
+                                        <span className="text-slate-700">含 1 位 Web3 必修課名額</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 text-blue-500"><IconCheck /></div>
-                                        <span className="text-slate-700">全站文章 + Podcast + 精選週報</span>
+                                        <span className="text-slate-700">精選週報 + 區塊勢全內容</span>
                                     </li>
                                 </ul>
                                 <button className="w-full py-4 rounded-xl font-bold text-white transition-all hover:opacity-90 hover:translate-y-[-2px] shadow-lg"
@@ -216,9 +295,9 @@
                             </div>
 
                             {/* Government Plan */}
-                            <div className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col opacity-80 hover:opacity-100 transition-opacity">
-                                <div className="absolute top-0 right-0 bg-slate-200 text-slate-600 px-4 py-1 rounded-bl-xl font-bold text-xs">僅限政府機關</div>
-                                <h3 className="text-2xl font-bold text-slate-700 mb-2">機關回饋方案</h3>
+                            <div className="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col opacity-90 hover:opacity-100 transition-opacity">
+                                <div className="absolute top-0 right-0 bg-orange-500 text-white px-4 py-1 rounded-bl-xl font-bold text-xs">僅限政府機關</div>
+                                <h3 className="text-2xl font-bold text-slate-700 mb-2">演講回饋案</h3>
                                 <div className="flex items-baseline gap-2 mb-6">
                                     <span className="text-4xl font-bold text-slate-600">NTD 5,000</span>
                                     <span className="text-slate-400">/ 年</span>
@@ -226,19 +305,19 @@
                                 <ul className="space-y-4 mb-8 flex-1">
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 text-slate-400"><IconCheck /></div>
-                                        <span className="text-slate-600">100 人閱讀權限</span>
+                                        <span className="text-slate-600">100 人閱讀權限 (平均每人 $50/年)</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 text-slate-400"><IconCheck /></div>
-                                        <span className="text-slate-600">全站內容解鎖</span>
+                                        <span className="text-slate-600">精選週報 + 區塊勢全內容</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 text-slate-400"><IconCheck /></div>
-                                        <span className="text-slate-600">目前主管機關採用之方案</span>
+                                        <span className="text-slate-600 font-medium text-orange-600">優惠限定：公部門推廣使用</span>
                                     </li>
                                 </ul>
                                 <button className="w-full py-4 rounded-xl font-bold text-slate-500 bg-slate-200 cursor-not-allowed">
-                                    僅限公部門申請
+                                    機關限定
                                 </button>
                             </div>
                         </div>
@@ -246,13 +325,13 @@
                 )
             },
             {
-                id: 'end',
+                id: 'cta',
                 layout: 'cover',
-                tag: "Next Step",
-                title: "讓資訊成為您的資產",
-                subtitle: "",
-                desc: "如果不做研究，投資就是賭博；如果不看情報，決策就是冒險。",
-                footer: "歡迎聯繫我們，開通企業試閱帳號"
+                tag: "Contact",
+                title: "省時、省心、最專業",
+                subtitle: "讓區塊勢成為您企業的資訊長",
+                desc: "歡迎聯繫討論適合的訂閱方案",
+                footer: "許明恩 | 區塊勢"
             }
         ];
 
