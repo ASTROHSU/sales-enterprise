@@ -32,15 +32,19 @@
         const IconUsers = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
         const IconClock = ({size=32, color="#48AAE0"}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>;
         const IconZap = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>;
-        const IconMouse = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1"/><path d="m5.1 8-2.9-.8"/><path d="M15 4.1 12.5 6"/><path d="m19.9 11-2.4-2.5"/></svg>;
         const IconTrending = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>;
-        const IconCheck = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>;
-        const IconMapPin = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
-        const IconCalendar = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>;
-        const IconExternalLink = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>;
+        const IconCheck = ({size=20, color="currentColor"}) => <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>;
         const IconBook = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>;
         const IconBrain = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>;
-        const IconBuilding = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M16 18h.01"/></svg>;
+        const IconBuilding = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#48AAE0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M16 18h.01"/></svg>;
+        const IconDollar = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2A68A0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>;
+        const IconMail = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>;
+        const IconLayers = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>;
+        const IconMouse = () => <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1"/><path d="m5.1 8-2.9-.8"/><path d="M15 4.1 12.5 6"/><path d="m19.9 11-2.4-2.5"/></svg>;
+        // Added missing icons
+        const IconCalendar = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>;
+        const IconMapPin = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E07C38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>;
+        const IconExternalLink = () => <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>;
 
         // --- Branding Colors ---
         const CI = {
@@ -56,50 +60,44 @@
                 id: 'intro',
                 layout: 'cover',
                 tag: "企業訂閱方案",
-                title: "用最少的時間，掌握區塊鏈產業最核心的趨勢",
+                title: "用最少的時間，\n掌握最重要的趨勢",
                 subtitle: "區塊勢",
-                desc: "我們不做資訊轟炸，我們做的是「雜訊過濾」。",
-                footer: "許明恩 | 區塊勢"
+                desc: "", // Removed as requested to clean up, or move content later
+                footer: "" // Removed name
             },
             {
                 id: 'pain-point',
                 layout: 'split',
-                title: "企業面對加密貨幣的焦慮",
+                title: "企業面對資訊爆炸的焦慮",
                 subtitle: "",
                 leftContent: (
-                    <div className="space-y-4">
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                            <div className="mt-1"><IconTarget /></div>
+                    <div className="space-y-6">
+                        <div className="flex items-start gap-4 p-0">
+                            <div className="mt-1 p-2 bg-slate-100 rounded-lg"><IconTarget /></div>
                             <div>
-                                <h3 className="text-lg font-bold text-slate-800">企業 vs 個人需求的斷層</h3>
-                                <p className="text-slate-600">個人的幣圈資訊多為炒作與迷因，企業需要的是可落地的商業邏輯。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">個人 vs 企業需求的斷層</h3>
+                                <p className="text-lg text-slate-600 leading-relaxed">2026 年企業與政府大舉進場，但市場資訊仍是為個人投資者（炒作、空投）設計。企業需要花費大量時間過濾雜訊。</p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                            <div className="mt-1"><IconUsers /></div>
+                        <div className="flex items-start gap-4 p-0">
+                            <div className="mt-1 p-2 bg-slate-100 rounded-lg"><IconUsers /></div>
                             <div>
-                                <h3 className="text-lg font-bold text-slate-800">缺乏專責團隊</h3>
-                                <p className="text-slate-600">多數企業沒有專職的 Web3 研究員，資訊蒐集零散且缺乏標準。</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                            <div className="mt-1"><IconClock /></div>
-                            <div>
-                                <h3 className="text-lg font-bold text-slate-800">時間成本高昂</h3>
-                                <p className="text-slate-600">決策者沒有時間整天過濾雜訊，您需要的是「結論」。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">缺乏系統化篩選機制</h3>
+                                <p className="text-lg text-slate-600 leading-relaxed">多數企業沒有專職 Web3 研究員。依賴內部群組隨機分享或偶爾的演講，資訊更新緩慢且碎片化，容易誤踩已知的坑。</p>
                             </div>
                         </div>
                     </div>
                 ),
                 rightContent: (
                     <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                        <h3 className="text-4xl font-bold mb-4 text-slate-800">少即是多</h3>
+                        <h3 className="text-3xl font-bold mb-4 text-slate-800">少即是多</h3>
                         <p className="text-xl text-slate-600 mb-8 leading-relaxed font-medium">
-                            重點從來不是「沒資訊看」，而是<br/><span className="text-blue-500 font-bold">「哪些資訊才是重要的」</span>？
+                            重點從來不是「沒資訊看」，而是<br/><span className="text-blue-500 font-bold">「哪些資訊才是重要的」</span>。
                         </p>
-                        <div className="p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300">
+                        <div className="p-6 bg-slate-50 rounded-2xl border border-dashed border-slate-300 w-full max-w-sm">
                             <IconClock size={60} color={CI.orange} />
-                            <p className="mt-4 text-slate-500">每週 10 分鐘的產業定錨</p>
+                            <p className="mt-4 text-slate-700 font-medium">如果您每週只有 10 分鐘...</p>
+                            <p className="text-slate-500 text-sm mt-2">我們幫您篩選最重要的那 1%</p>
                         </div>
                     </div>
                 )
@@ -107,36 +105,38 @@
             {
                 id: 'structure',
                 layout: 'detail',
-                tag: "產品架構",
+                tag: "", // Removed tag
                 title: "全方位的資訊服務體系",
                 content: (
-                    <div className="flex flex-col h-full justify-center items-center space-y-6 md:space-y-8 px-4">
-                        <p className="text-xl text-slate-600 mb-2">為企業量身打造的學習路徑</p>
-                        
-                        {/* Level 3 */}
-                        <div className="w-full max-w-3xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-slate-700 hover:translate-x-2 transition-transform">
-                            <div className="p-3 bg-slate-100 rounded-full shrink-0"><IconTrending /></div>
-                            <div>
-                                <h3 className="text-xl font-bold text-slate-800">3. 區塊勢內容 (深度)</h3>
-                                <p className="text-slate-600">第一手經驗、趨勢分析、每週 Podcast</p>
+                    <div className="flex flex-col h-full justify-center items-center px-4 w-full">
+                         {/* Removed outer border/container, using grid/flex for clean layout */}
+                         <div className="w-full max-w-5xl space-y-6">
+                            
+                            {/* Level 3 */}
+                            <div className="flex items-center gap-6 p-8 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border-l-[12px] border-slate-700">
+                                <div className="p-4 bg-slate-100 rounded-full shrink-0"><IconTrending /></div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-slate-800 mb-1">3. 區塊勢內容 (深度)</h3>
+                                    <p className="text-lg text-slate-600">第一手經驗、趨勢分析、每週 Podcast</p>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Level 2 */}
-                        <div className="w-full max-w-4xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-orange-500 hover:translate-x-2 transition-transform">
-                            <div className="p-3 bg-orange-50 rounded-full shrink-0"><IconZap /></div>
-                            <div>
-                                <h3 className="text-xl font-bold text-slate-800">2. 精選週報 (時事)</h3>
-                                <p className="text-slate-600">每週五則大事、圖表化、社群風向、高層必讀</p>
+                            {/* Level 2 */}
+                            <div className="flex items-center gap-6 p-8 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border-l-[12px] border-orange-500">
+                                <div className="p-4 bg-orange-50 rounded-full shrink-0"><IconZap /></div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-slate-800 mb-1">2. 精選週報 (時事)</h3>
+                                    <p className="text-lg text-slate-600">每週五則大事、圖表化、社群風向、高層必讀</p>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Level 1 */}
-                        <div className="w-full max-w-5xl flex items-center gap-6 p-6 bg-white rounded-2xl shadow-md border-l-8 border-blue-400 hover:translate-x-2 transition-transform">
-                            <div className="p-3 bg-blue-50 rounded-full shrink-0"><IconBook /></div>
-                            <div>
-                                <h3 className="text-xl font-bold text-slate-800">1. 企業 Web3 必修課 (入門)</h3>
-                                <p className="text-slate-600">實體工作坊、實際上手操作、建立產業框架</p>
+                            {/* Level 1 */}
+                            <div className="flex items-center gap-6 p-8 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow border-l-[12px] border-blue-400">
+                                <div className="p-4 bg-blue-50 rounded-full shrink-0"><IconBook /></div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-slate-800 mb-1">1. 企業 Web3 必修課 (入門)</h3>
+                                    <p className="text-lg text-slate-600">實體工作坊、實際上手操作、建立產業框架</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,28 +148,23 @@
                 title: "精選週報：資訊過濾器",
                 subtitle: "",
                 leftContent: (
-                    <div className="space-y-6 flex flex-col justify-center h-full">
+                    <div className="space-y-8 flex flex-col justify-center h-full">
                          <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">01</span>
+                            <div className="mt-1"><IconUsers /></div>
                             <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">建立標準化流程</h3>
-                                <p className="text-slate-600">透過標準化的 SOP，替企業快篩每週新聞，確保不漏接重大訊號。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">真人親選，週一送達</h3>
+                                <p className="text-slate-600 text-lg">一週一刊，每週一早上 07:00 寄送。由創辦人親自過濾，精選不超過 5 則重大新聞，不讓決策者被雜訊淹沒。</p>
                             </div>
                         </div>
                         <div className="w-full h-px bg-slate-200"></div>
                         <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">02</span>
+                            <div className="mt-1"><IconLayers /></div>
                             <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">極致精簡</h3>
-                                <p className="text-slate-600">每週僅產出一篇，內容不超過 5 則。一則新聞，三個層次（摘要、圖表、風向）。</p>
-                            </div>
-                        </div>
-                        <div className="w-full h-px bg-slate-200"></div>
-                        <div className="flex items-start gap-4">
-                            <span className="text-4xl font-bold text-orange-200 mt-[-5px]">03</span>
-                            <div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-1">一眼看懂</h3>
-                                <p className="text-slate-600">大量運用圖表與視覺化呈現數據。</p>
+                                <h3 className="text-xl font-bold text-slate-800 mb-1">一則新聞，三個層次</h3>
+                                <p className="text-slate-600 text-lg">不用再去網路上找資料。每則新聞包含：<br/>
+                                <span className="font-bold text-slate-700">1. 摘要</span> (發生什麼事)<br/>
+                                <span className="font-bold text-slate-700">2. 圖表</span> (一眼看懂數據)<br/>
+                                <span className="font-bold text-slate-700">3. 風向</span> (社群與市場討論)</p>
                             </div>
                         </div>
                     </div>
@@ -181,39 +176,36 @@
                             alt="Report Preview" 
                             className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
                         />
-                        <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/80 to-transparent p-6 pt-20">
-                            <p className="text-white font-bold text-lg">實際呈現：專為決策者設計的介面</p>
-                        </div>
                     </div>
                 )
             },
             {
                 id: 'why-me',
                 layout: 'detail',
-                tag: "專業優勢",
+                tag: "", // Removed tag
                 title: "為什麼是許明恩？",
                 content: (
                     <div className="flex flex-col h-full justify-center">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
-                                <div className="flex justify-center mb-4"><IconBrain /></div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">人腦勝過 AI</h3>
-                                <p className="text-slate-600 leading-relaxed">AI 給你全面但發散的資訊；專家給你經過「判斷」後的精準結論。</p>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                             {/* Human Curation */}
+                             <div className="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex justify-center mb-6"><IconBrain /></div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-4">真人把關</h3>
+                                <p className="text-slate-600 leading-relaxed text-lg">AI 給你海量資訊，真人給你判斷權重。我提供的是「重要性」，而非單純的結論。</p>
                             </div>
-                             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
-                                <div className="flex justify-center mb-4"><IconBuilding /></div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">市場驗證</h3>
-                                <p className="text-slate-600 leading-relaxed">金管會、國泰金控、台灣大哥大等產業龍頭皆已付費訂閱。</p>
+                             {/* Trust */}
+                             <div className="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex justify-center mb-6"><IconBuilding /></div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-4">產業信賴</h3>
+                                <p className="text-slate-600 leading-relaxed text-lg">國泰金控、台灣大哥大、金管會等機構皆已訂閱，這是一份被產業認可的資訊來源。</p>
                             </div>
-                             <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 text-center hover:shadow-md transition-shadow">
-                                <div className="text-4xl font-bold text-slate-700 mb-4 font-mono">$</div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-3">極高性價比</h3>
-                                <p className="text-slate-600 leading-relaxed">訂閱一整年的費用，比請一位實習生一個月的薪水還便宜。</p>
+                             {/* Cost */}
+                             <div className="bg-white p-8 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-shadow">
+                                <div className="flex justify-center mb-6"><IconDollar /></div>
+                                <h3 className="text-2xl font-bold text-slate-800 mb-4">極高性價比</h3>
+                                <p className="text-slate-600 leading-relaxed text-lg">訂閱一整年的費用 (USD 5,000)，比聘請一位實習生的一年薪水更便宜。</p>
                             </div>
                         </div>
-                         <div className="mt-8 text-center">
-                             <p className="text-xl text-slate-500 italic">"在資訊氾濫的時代，判斷力才是最昂貴的資產。"</p>
-                         </div>
                     </div>
                 )
             },
@@ -271,34 +263,26 @@
                             用最低的成本，為企業引進最專業的 Web3 外部智庫
                         </p>
                         
-                        {/* Single Plan - Centered */}
-                        <div className="max-w-md w-full">
-                            <div className="bg-white p-10 rounded-2xl shadow-xl border border-slate-200 flex flex-col relative overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                                <div className="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
-                                <h3 className="text-3xl font-bold text-slate-800 mb-2 text-center">企業標準訂閱</h3>
-                                <div className="flex items-baseline justify-center gap-2 mb-8">
-                                    <span className="text-5xl font-bold text-blue-600">USD 5,000</span>
-                                    <span className="text-slate-500 text-xl">/ 年</span>
+                        {/* Single Plan - Centered & Enlarged */}
+                        <div className="max-w-lg w-full">
+                            <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-200 flex flex-col relative overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                                <div className="absolute top-0 left-0 w-full h-3 bg-blue-500"></div>
+                                <h3 className="text-4xl font-bold text-slate-800 mb-4 text-center">企業標準訂閱</h3>
+                                <div className="flex items-baseline justify-center gap-2 mb-10">
+                                    <span className="text-6xl font-bold text-blue-600">USD 5,000</span>
+                                    <span className="text-slate-500 text-2xl">/ 年</span>
                                 </div>
-                                <ul className="space-y-5 mb-10 flex-1">
+                                <ul className="space-y-6 mb-12 flex-1 px-4">
                                     <li className="flex items-start gap-4">
-                                        <div className="mt-1 text-blue-500"><IconCheck size={24}/></div>
-                                        <span className="text-lg text-slate-700">100 人閱讀權限 (平均每人 $50/年)</span>
+                                        <div className="mt-1 text-blue-500"><IconCheck size={28} color={CI.blue}/></div>
+                                        <span className="text-xl text-slate-700">100 人閱讀權限 (平均每人 $50/年)</span>
                                     </li>
                                     <li className="flex items-start gap-4">
-                                        <div className="mt-1 text-blue-500"><IconCheck size={24}/></div>
-                                        <span className="text-lg text-slate-700">含 1 位 Web3 必修課名額</span>
-                                    </li>
-                                    <li className="flex items-start gap-4">
-                                        <div className="mt-1 text-blue-500"><IconCheck size={24}/></div>
-                                        <span className="text-lg text-slate-700">精選週報 + 區塊勢全內容解鎖</span>
-                                    </li>
-                                    <li className="flex items-start gap-4">
-                                        <div className="mt-1 text-orange-500"><IconCheck size={24}/></div>
-                                        <span className="text-lg text-slate-700 font-bold">比聘請一位實習生更划算</span>
+                                        <div className="mt-1 text-blue-500"><IconCheck size={28} color={CI.blue}/></div>
+                                        <span className="text-xl text-slate-700">精選週報 + 區塊勢全內容解鎖</span>
                                     </li>
                                 </ul>
-                                <button className="w-full py-4 rounded-xl font-bold text-white text-lg transition-all hover:opacity-90 hover:translate-y-[-2px] shadow-lg"
+                                <button className="w-full py-5 rounded-2xl font-bold text-white text-xl transition-all hover:opacity-90 hover:translate-y-[-2px] shadow-lg"
                                         style={{backgroundColor: CI.blue}}>
                                     立即聯繫訂閱
                                 </button>
@@ -314,7 +298,7 @@
                 title: "省時、省心、最專業",
                 subtitle: "讓區塊勢成為您企業的資訊長",
                 desc: "歡迎聯繫討論適合的訂閱方案",
-                footer: "許明恩 | 區塊勢"
+                footer: "" // Removed
             }
         ];
 
@@ -347,13 +331,15 @@
                     case 'cover':
                         return (
                             <div className="flex flex-col items-center justify-center h-full text-center px-6 animate-fade-in overflow-hidden relative">
-                                <div className="mb-8">
-                                    <span className="py-2 px-5 rounded-full text-sm md:text-base font-bold tracking-widest uppercase bg-blue-50 text-blue-600">
-                                        {slide.tag}
-                                    </span>
-                                </div>
-                                <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl tracking-tight">{slide.title}</h1>
-                                <p className="text-xl md:text-2xl text-slate-500 mb-12 max-w-3xl leading-relaxed">{slide.subtitle}</p>
+                                {slide.tag && (
+                                    <div className="mb-8">
+                                        <span className="py-2 px-5 rounded-full text-sm md:text-base font-bold tracking-widest uppercase bg-blue-50 text-blue-600">
+                                            {slide.tag}
+                                        </span>
+                                    </div>
+                                )}
+                                <h1 className="text-4xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight max-w-5xl tracking-tight whitespace-pre-line">{slide.title}</h1>
+                                <p className="text-xl md:text-3xl text-slate-500 mb-12 max-w-3xl leading-relaxed">{slide.subtitle}</p>
                                 {slide.desc && (
                                     <div className="p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-slate-100 max-w-3xl">
                                         <p className="text-xl md:text-2xl text-slate-700 font-medium leading-relaxed">
@@ -361,17 +347,19 @@
                                         </p>
                                     </div>
                                 )}
-                                <div className="mt-auto pb-8 text-slate-400 font-medium tracking-wide text-sm uppercase">
-                                    {slide.footer}
-                                </div>
+                                {slide.footer && (
+                                    <div className="mt-auto pb-8 text-slate-400 font-medium tracking-wide text-sm uppercase">
+                                        {slide.footer}
+                                    </div>
+                                )}
                             </div>
                         );
                     case 'split':
                         return (
                             <div className="flex flex-col md:flex-row h-full px-6 md:px-12 py-8 md:py-12 gap-8 md:gap-16 overflow-hidden items-center">
                                 <div className="flex-1 flex flex-col justify-center min-h-min w-full">
-                                    <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-2">{slide.title}</h2>
-                                    <p className="text-lg text-slate-400 mb-8 font-serif italic">{slide.subtitle}</p>
+                                    <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6">{slide.title}</h2>
+                                    {slide.subtitle && <p className="text-lg text-slate-400 mb-8 font-serif italic">{slide.subtitle}</p>}
                                     <div className="pr-2">{slide.leftContent}</div>
                                 </div>
                                 <div className="flex-1 flex flex-col justify-center bg-white rounded-3xl p-8 md:p-12 w-full h-full max-h-[600px] shadow-sm border border-slate-100 relative overflow-hidden">
@@ -382,10 +370,12 @@
                     case 'detail':
                         return (
                             <div className="flex flex-col h-full px-6 md:px-12 py-8 md:py-12 max-w-7xl mx-auto overflow-hidden w-full">
-                                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 flex-shrink-0">
-                                    <span className="self-start md:self-auto bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md tracking-wide uppercase">{slide.tag}</span>
-                                    <h2 className="text-3xl md:text-5xl font-bold text-slate-800 leading-tight">{slide.title}</h2>
-                                </div>
+                                {slide.title && (
+                                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 flex-shrink-0">
+                                        {slide.tag && <span className="self-start md:self-auto bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md tracking-wide uppercase">{slide.tag}</span>}
+                                        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 leading-tight">{slide.title}</h2>
+                                    </div>
+                                )}
                                 <div className="flex-1 bg-white rounded-3xl shadow-lg border border-slate-200 p-8 md:p-12 overflow-hidden flex flex-col relative">
                                     {/* Decoration */}
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-50 pointer-events-none"></div>
